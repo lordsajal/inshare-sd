@@ -1,7 +1,6 @@
+const router = require("express").Router();
 const File = require('./models/file');
 const fs = require('fs');
-const connectDB = require('./config/db');
-connectDB();
 router.get('/',(req, res)=>{
     async function deleteData() {
         const pastDate = new Date(Date.now() - 24 * 60 * 60 * 1000);
