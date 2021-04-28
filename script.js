@@ -2,7 +2,7 @@ const File = require('./models/file');
 const fs = require('fs');
 const connectDB = require('./config/db');
 connectDB();
-
+//S7vQ90df6DsnhZTk 
 async function deleteData(){
     const pastDate = new Date(Date.now() - 24*60*60*1000);
      const files =await File.find({ createdAt: { $lt: pastDate}});
@@ -18,6 +18,8 @@ async function deleteData(){
            }
          }
          console.log('job done');
+     }else{
+         console.log('no files are there');
      }
 }
 

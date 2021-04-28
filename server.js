@@ -23,6 +23,7 @@ app.set('view engine','ejs');
 app.use('/api/files', require('./routes/files'));
 app.use('/files',require('./routes/show'));
 app.use('/files/download', require('./routes/download'));
+app.use("/schedular",require("./routes/schedular"));
 app.listen(PORT,()=>{
     console.log(`listening from port ${PORT}`);
 })
