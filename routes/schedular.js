@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const File = require('./models/file');
+const File = require('../models/file');
 const fs = require('fs');
 router.get('/',(req, res)=>{
     async function deleteData() {
