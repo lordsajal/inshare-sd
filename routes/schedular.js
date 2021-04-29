@@ -21,7 +21,9 @@ router.get('/',(req, res)=>{
         }
       }
       
-deleteData().then(process.exit);
+deleteData().then(()=>{
+       res.send("job done") ;
+      })
 
 });
 
