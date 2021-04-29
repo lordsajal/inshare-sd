@@ -1,6 +1,8 @@
 const router = require("express").Router();
-const File = require('../models/file');
-const fs = require('fs');
+const File = require("../models/file");
+const fs = require("fs");
+
+
 router.get('/',(req, res)=>{
     async function deleteData() {
         const pastDate = new Date(Date.now() - 24 * 60 * 60 * 1000);
@@ -16,16 +18,13 @@ router.get('/',(req, res)=>{
             
           }
           
-        }else{
-            console.log('no files are there');
         }
       }
-      
-deleteData().then(()=>{
-       res.send("job done") ;
+      deleteData().then(()=>{
+        res.send("job done");
       })
 
-});
+})
 
 
 module.exports = router;
