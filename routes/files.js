@@ -21,11 +21,7 @@ let upload = multer({
 
 router.post("/", (req, res) => {
   //valid request
-res.setHeader("Access-Control-Allow-Origin", "*")
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Max-Age", "1800");
-  res.setHeader("Access-Control-Allow-Headers", "content-type");
-  res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
+
   //store file
   upload(req, res, async (err) => {
     if (!req.file) {
@@ -53,13 +49,7 @@ res.setHeader("Access-Control-Allow-Origin", "*")
 
 router.post('/send',async(req,res)=>{
   const { uuid, emailTo, emailFrom } = req.body;
-// console.log(req.body);
-// return res.send({});
-  res.setHeader("Access-Control-Allow-Origin", "*")
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Max-Age", "1800");
-  res.setHeader("Access-Control-Allow-Headers", "content-type");
-  res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
+
   if(!uuid || !emailFrom || !emailTo){
     return res.status(422).send({ error:'all field are required.'});
   }
